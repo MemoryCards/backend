@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+<!-- Static
+{% load static %}
+-->
+<!-- Style
+{% block style %}<link href="{% static 'posts/css/style.css' %}" rel="stylesheet" >{% endblock %}
+-->
+<!-- The title of post list   -->
+{% block title %} The Posts {% endblock %}
+
+{% block content %}
+    <h1>The Cards</h1>
+    <ul class="posts_list container">
+        {% for card in cards %}
+        <li >
+            <a class="link-to-post" href="{% url 'cards:details' card.id %}"> {{card.question}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

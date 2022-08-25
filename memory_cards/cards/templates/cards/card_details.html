@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+<!-- The static title of Post  -->
+{% block title %}
+{{ details.title }}
+{% endblock %}
+{% block content %}
+<section class="post_content container">
+    <h1 class="page-title">{{ details.title }}</h1>
+    
+
+    <p >
+        {{ card_details.question }}
+    </p>
+    <p >
+        {{ card_details.response }}
+    </p>
+</section>
+{% endblock %}
