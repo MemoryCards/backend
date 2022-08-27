@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .models import Card
 #from tags.models import Tag
@@ -14,3 +15,6 @@ def card_details(request, card_id: int):
     details = Card.objects.get(pk=card_id)
     context = {'card_details': details}
     return render(request, 'cards/card_details.html', context)
+
+def add_card(request):
+    return
