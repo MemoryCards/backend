@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django_extensions',
+    'crispy_forms',
+    'sorl.thumbnail',
+
     'main.apps.MainConfig',
     'cards.apps.CardsConfig'
 ]
