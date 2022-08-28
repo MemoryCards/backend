@@ -1,9 +1,10 @@
-const q = document.querySelector('.question')
-const r = document.querySelector('.response')
+// const q = document.querySelector('.question')
+const response = document.querySelector('.response')
 const btn = document.querySelector('.check')
 
 function show_response (){
-    r.style.display = "block";
+    response.style.display = "block";
+   // response.classList.toggle("d-block")
 }
 
 btn.addEventListener('click', show_response )

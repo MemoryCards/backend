@@ -1,0 +1,16 @@
+/* style.scss:../css/style.css -w 8/ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.response {
+    display: none;
+}
+body {
+    position: relative;
+}

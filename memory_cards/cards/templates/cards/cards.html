@@ -11,10 +11,10 @@
 
 {% block content %}
     <h1>The Cards</h1>
-    <ul class="posts_list container">
+    <ul class="list-group">
         {% for card in cards %}
-        <li >
-            <a class="link-to-post" href="{% url 'cards:details' card.id %}"> {{card.question}}</a>
+        <li class="list-group-item list-group-item-light">
+            <a class="link-secondary" href="{% url 'cards:details' card.id %}"> {{card.question}}</a>
         </li>
         {% endfor %}
     </ul>
