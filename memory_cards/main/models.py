@@ -13,6 +13,13 @@ class Timestamped(models.Model):
     class Meta:
         abstract = True
 
-class Tag(models.Model):
+
+class Categories(models.Model):
     name = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
+
+
+class Tags(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(max_length=100, unique=True)
+    categories = models.ManyToManyField(Categories)
