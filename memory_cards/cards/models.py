@@ -2,17 +2,40 @@ from django.db import models
 
 #from main.models import Timestamped
 
-from main.models import Tags, Categories
 
+class Category(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(max_length=100, unique=True)
+
+
+class Tag(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(max_length=100, unique=True)
 
 
 class Card(models.Model):
     question = models.CharField(max_length=255)
     response = models.TextField(max_length=2000)
-    categories = models.ForeignKey(Categories, on_delete=models.CASCADE)
-    tags = models.ManyToManyField(Tags)
+    categories = models.ForeignKey(Category, on_delete=models.CASCADE)
+    tags = models.ManyToManyField(Tag, blank=True)
 
 '''
-class UserCreatedCard(Card, Timestamped):
-    usser = models.OneToOneRel()
+class UserCard(Card, Timestamped):
+    card_id = models.ForeignKey(Card)
+    question = models.CharField(max_length=255, unique=True)
+    response = models.TextField(max_length=2000, unique=True)
+    categories = models.ForeignKey(Categories, on_delete=models.CASCADE)
+    tags = models.ManyToManyField(Tags)
+    author = models.OneToOneRel()
+    votes = models.ForeignKey(Votes, on_delete=models.CASCADE)
+
+
+class Votes(models.Model):
+    user_card_id = models
+    count = models.IntegerField()
+    class Categories(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(max_length=100, unique=True)
+
 '''
+
