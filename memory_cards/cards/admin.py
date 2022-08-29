@@ -10,7 +10,9 @@ class PostsAdmin(admin.ModelAdmin):
 @admin.register(Category)
 class PostsAdmin(admin.ModelAdmin):
     list_display = ['name']
+    prepopulated_fields = {'slug': ('name',)}
 
 @admin.register(Tag)
 class PostsAdmin(admin.ModelAdmin):
     list_display = ['name']
+    prepopulated_fields = {'slug': ('name',)}

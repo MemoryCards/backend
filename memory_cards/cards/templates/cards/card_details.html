@@ -11,5 +11,17 @@
         <div class="response bg-light">
             <p>{{ card_details.response }}</p>
         </div>
+    <div>
+        <div>
+            {% for tag in tags %}
+            {{ tag.name }}
+            {% endfor %}
+        </div>
+        <div>
+            {% for c in category %}
+            {{ c.name }}
+            {% endfor %}
+        </div>
+    </div>
 </section>
 {% endblock %}
