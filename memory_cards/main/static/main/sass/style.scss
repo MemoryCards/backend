@@ -1,4 +1,7 @@
 /* style.scss:../css/style.css -w 8/ */
+@use './colors' as colors ;
+@use './animations' as animations;
+@use './reset' as colors ;
 
 *,
 *::before,
