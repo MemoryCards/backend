@@ -1,15 +1,9 @@
-/* style.scss:../css/style.css -w 8/ */
+/* style.scss:../css/style.css -w / */
 @use './colors' as colors ;
 @use './animations' as animations;
-@use './reset' as colors ;
+@use './reset' as reset ;
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+
 
 .response {
     display: none;
@@ -17,6 +11,7 @@
 
 
 body {
+    font-family: 'IBM Plex Sans', sans-serif;
     position: relative;
     background-color: rgba(203, 104, 104, 0.5);
 }
