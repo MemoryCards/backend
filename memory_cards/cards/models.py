@@ -18,9 +18,20 @@ class Tag(models.Model):
     def __str__(self):
         return f"{self.name}"
 
+
+class Deck(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+    depiction = models.TextField(max_length=2000)
+    categories = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True )
+
+    def __str__(self):
+        return f"{self.name}"
+
+
 class Card(models.Model):
     question = models.CharField(max_length=255)
     response = models.TextField(max_length=2000)
+    deck_id = models.ForeignKey(Deck, on_delete=models.SET_NULL, null=True )
     categories = models.ForeignKey(Category, on_delete=models.CASCADE)
     tags = models.ManyToManyField(Tag, blank=True)
 

@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 
-from .models import Card, Category, Tag
+from .models import Card, Category, Tag, Deck
 
 @admin.register(Card)
 class PostsAdmin(admin.ModelAdmin):
@@ -16,3 +16,7 @@ class PostsAdmin(admin.ModelAdmin):
 class PostsAdmin(admin.ModelAdmin):
     list_display = ['name']
     prepopulated_fields = {'slug': ('name',)}
+
+@admin.register(Deck)
+class PostsAdmin(admin.ModelAdmin):
+    list_display = ['name']
