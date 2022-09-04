@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
 
     'main.apps.MainConfig',
-    'cards.apps.CardsConfig'
+    'cards.apps.CardsConfig',
+    'decks.apps.DecksConfig'
 ]
 
 MIDDLEWARE = [

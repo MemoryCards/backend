@@ -1,22 +1,24 @@
 from django.contrib import admin
 
 
-from .models import Card, Category, Tag, Deck
+from .models import Card, Category, Tag
+
 
 @admin.register(Card)
 class PostsAdmin(admin.ModelAdmin):
     list_display = ['question']
+
 
 @admin.register(Category)
 class PostsAdmin(admin.ModelAdmin):
     list_display = ['name']
     prepopulated_fields = {'slug': ('name',)}
 
+
 @admin.register(Tag)
 class PostsAdmin(admin.ModelAdmin):
     list_display = ['name']
     prepopulated_fields = {'slug': ('name',)}
 
-@admin.register(Deck)
-class PostsAdmin(admin.ModelAdmin):
-    list_display = ['name']
+
+

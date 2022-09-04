@@ -17,8 +17,8 @@ def card_details(request, card_id: int):
     tags = Tag.objects.all()
     category = Category.objects.all()
     details = Card.objects.get(pk=card_id)
-    context = {'card_details': details, 'tags': tags, 'category': category }
-    return render(request, 'cards/card_details.html', context)
+    context = {'card': details, 'tags': tags, 'category': category}
+    return render(request, 'cards/card.html', context)
 
-def add_user_card(request):
-    return
+
+

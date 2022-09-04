@@ -12,9 +12,9 @@
 {% block content %}
     <h1>The Cards</h1>
     <ul class="list-group">
-        {% for card in cards %}
+        {% for deck in decks %}
         <li class="list-group-item list-group-item-light">
-            <a class="link-secondary" href="{% url 'cards:card' card.id %}"> {{ card.question }}</a>
+            <a class="link-secondary" href="{% url 'decks:deck' deck.id %}"> {{ deck.name}}</a>
         </li>
         {% endfor %}
     </ul>
