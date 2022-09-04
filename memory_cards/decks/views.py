@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Deck
-#from .models import Category
+from cards.models import Card
+
 
 def decks_list(request):
     list_of_decks = Deck.objects.all()
@@ -10,5 +11,6 @@ def decks_list(request):
 
 def deck_details(request, deck_id: int):
     details = Deck.objects.get(pk=deck_id)
-    context = {'deck': details}
+    card_details = Card.objects.filter(deck_id=details.id)
+    context = {'deck': details, 'cards': card_details}
     return render(request, 'cards/deck.html', context)

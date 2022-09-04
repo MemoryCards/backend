@@ -6,16 +6,17 @@
   padding: 0;
 }
 
-/* style.scss:../css/style.css -w / */
+/*
+sass style.scss:../css/style.css -w
+*/
 .response {
   display: none;
 }
 
 body {
-
   font-family: "IBM Plex Sans", sans-serif;
   position: relative;
-  background-color: rgba(203, 104, 104, 0.5);
+  background-color: rgba(104, 223, 239, 0.75);
 }
 
 /*# sourceMappingURL=style.css.map */
