@@ -19,7 +19,7 @@ class Tag(models.Model):
 
 class Card(models.Model):
     question = models.CharField(max_length=255)
-    response = models.TextField(max_length=2000)
+    answer = models.TextField(max_length=2000)
     deck_id = models.ForeignKey('decks.Deck', on_delete=models.SET_NULL, null=True )
     categories = models.ForeignKey(Category, on_delete=models.CASCADE)
     tags = models.ManyToManyField(Tag, blank=True)

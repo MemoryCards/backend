@@ -17,9 +17,14 @@ body {
     background-color: colors.$background-them;
 }
 
-header {
-    color: colors.$white;
+nav {
+    text-transform: uppercase;
+    z-index: 1;
+}
 
+header {
+    color: colors.$grey;
+    text-shadow: 2px 1px colors.$white;
     h1 {
         font-size: 30px;
         text-transform: uppercase;
@@ -43,7 +48,7 @@ header {
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, .8);
+        background-color: rgb(255, 255, 255, .5 );
         z-index: -10;
     }
 
