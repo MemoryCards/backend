@@ -11,9 +11,50 @@ sass style.scss:../css/style.css -w
     display: none;
 }
 
-
 body {
     font-family: 'IBM Plex Sans', sans-serif;
     position: relative;
     background-color: colors.$background-them;
+}
+
+header {
+    color: colors.$white;
+
+    h1 {
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .welcome-img {
+        position: relative;
+        height: 100vh;
+        background-image: url('../img/business-card-g3dca71946_640.png');
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        z-index: 0;
+    }
+
+    .welcome-shadow {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .8);
+        z-index: -10;
+    }
+
+    .welcome-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        padding: 10px;
+        text-align: center;
+        z-index: 5;
+    }
 }
