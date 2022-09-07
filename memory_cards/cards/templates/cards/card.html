@@ -5,9 +5,39 @@
 {% endblock %}
 {% block content %}
 <section>
+    <div id="albert" class="container text-center">
+        <div class="card">
+            <div class="card-header">
+                <p class="question card-text">{{ card.question }}</p>
+            </div>
+            <div class="card-body">
+                <p class="question card-text response">{{ card.answer }}</p>
+                <button type="button" class="check btn btn-light"> Check </button>
+            </div>
+
+        </div>
+
+        <div class="card-footer">
+                <h5>Tags</h5>
+                <ol class="list-group list-group-flush">
+                    {% for tag in tags %}
+                        <li class="list-group-item">{{ tag.name }}</li>
+                    {% endfor %}
+                </ol>
+                <h5>Categories</h5>
+                <ol class="list-group list-group-flush">
+                    {% for c in category %}
+                        <li class="list-group-item">{{ c.name }}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+    </div>
+
+
+
+
     <div class="container text-center">
-        <h1 class="page-title">{{ details.title }}</h1>
-    <div class="container">
+
         <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
             <div class="card-body">
                 <p class="question card-text">{{ card.question }}</p>
@@ -16,23 +46,32 @@
         </div>
 
         <div class="card text-dark bg-light mb-3 response" style="max-width: 18rem;">
+
             <div class="card-body">
                 <p class="question card-text">{{ card.answer }}</p>
             </div>
-        </div>
-    </div>
 
-        <div>
-        <div class="nav">
-            {% for tag in tags %}
-            {{ tag.name }}
-            {% endfor %}
-        </div>
+
+
+
+            <div class="card-footer">
+                <div>
+                {% for tag in tags %}
+                {{ tag.name }}
+                {% endfor %}
+                </div>
         <div>
             {% for c in category %}
             {{ c.name }}
             {% endfor %}
         </div>
+            </div>
+
+
+        </div>
+
+        <div>
+
     </div>
 
         </div>
