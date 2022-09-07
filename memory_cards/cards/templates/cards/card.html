@@ -4,25 +4,25 @@
 {{ details.title }}
 {% endblock %}
 {% block content %}
-<section class="justify-content-center container">
-
-    <h1 class="page-title">{{ details.title }}</h1>
-<div class="container">
-    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-        <div class="card-body">
-            <p class="question card-text">{{ card.question }}</p>
+<section>
+    <div class="container text-center">
+        <h1 class="page-title">{{ details.title }}</h1>
+    <div class="container">
+        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+                <p class="question card-text">{{ card.question }}</p>
+            </div>
+            <button type="button" class="check btn btn-light"> Check </button>
         </div>
-        <button type="button" class="check btn btn-light"> Check </button>
+
+        <div class="card text-dark bg-light mb-3 response" style="max-width: 18rem;">
+            <div class="card-body">
+                <p class="question card-text">{{ card.answer }}</p>
+            </div>
+        </div>
     </div>
 
-    <div class="card text-dark bg-light mb-3 response" style="max-width: 18rem;">
-        <div class="card-body">
-            <p class="question card-text">{{ card.answer }}</p>
-        </div>
-    </div>
-</div>
-
-    <div>
+        <div>
         <div class="nav">
             {% for tag in tags %}
             {{ tag.name }}
@@ -34,5 +34,9 @@
             {% endfor %}
         </div>
     </div>
+
+        </div>
+
+
 </section>
 {% endblock %}

@@ -10,12 +10,27 @@
 {% block title %} The Posts {% endblock %}
 
 {% block content %}
-    <h1>The Cards</h1>
-    <ul class="list-group">
-        {% for deck in decks %}
-        <li class="list-group-item list-group-item-light">
-            <a class="link-secondary" href="{% url 'decks:deck' deck.id %}"> {{ deck.name}}</a>
-        </li>
-        {% endfor %}
-    </ul>
+    <section id="decks" class="decks">
+
+        <div class="container text-center">
+            <h1 class="m-2 p-2">Decks</h1>
+            <div class="card-group">
+
+                {% for deck in decks %}
+                    <div class="card text-center mx-3">
+                        <div class="card-header">
+                            {{ deck.name}}
+                        </div>
+                        <div class="card-body">
+                            {{ deck.depiction}}
+                        </div>
+                        <div class="card-footer">
+                            <a class="link-secondary" href="{% url 'decks:deck' deck.id %}">click here for more</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
 {% endblock %}
