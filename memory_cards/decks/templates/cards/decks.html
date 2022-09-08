@@ -14,21 +14,24 @@
 
         <div class="container text-center">
             <h1 class="m-2 p-2">Decks</h1>
-            <div class="card-group">
 
-                {% for deck in decks %}
-                    <div class="card text-center mx-3">
-                        <div class="card-header">
+
+                <di class="my-carousel">
+                    <div class="card-group">
+                    {% for deck in decks %}
+                        <div class="card text-center mx-3">
+                            <div class="card-header">
                             {{ deck.name}}
+                            </div>
+                            <div class="card-body">
+                                {{ deck.depiction}}
+                            </div>
+                            <div class="card-footer">
+                                <a class="link-secondary" href="{% url 'decks:deck' deck.id %}">click here for more</a>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            {{ deck.depiction}}
-                        </div>
-                        <div class="card-footer">
-                            <a class="link-secondary" href="{% url 'decks:deck' deck.id %}">click here for more</a>
-                        </div>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </section>

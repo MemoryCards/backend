@@ -4,78 +4,44 @@
 {{ details.title }}
 {% endblock %}
 {% block content %}
-<section>
-    <div id="albert" class="container text-center">
-        <div class="card">
+<section class="vh-100">
+    <div id="albert" class="container text-center vw-100">
+        <div class="card top-1 mt-2 vh-75">
             <div class="card-header">
-                <p class="question card-text">{{ card.question }}</p>
+                <p class="question card-text justify-content-center">{{ card.question }}</p>
             </div>
             <div class="card-body">
                 <p class="question card-text response">{{ card.answer }}</p>
-                <button type="button" class="check btn btn-light"> Check </button>
+                <button type="button" class="check btn btn-warning"> Check </button>
             </div>
 
         </div>
 
-        <div class="card-footer">
-                <h5>Tags</h5>
-                <ol class="list-group list-group-flush">
-                    {% for tag in tags %}
-                        <li class="list-group-item">{{ tag.name }}</li>
-                    {% endfor %}
-                </ol>
-                <h5>Categories</h5>
-                <ol class="list-group list-group-flush">
-                    {% for c in category %}
-                        <li class="list-group-item">{{ c.name }}</li>
-                    {% endfor %}
-                </ol>
-            </div>
-    </div>
-
-
-
-
-    <div class="container text-center">
-
-        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-            <div class="card-body">
-                <p class="question card-text">{{ card.question }}</p>
-            </div>
-            <button type="button" class="check btn btn-light"> Check </button>
-        </div>
-
-        <div class="card text-dark bg-light mb-3 response" style="max-width: 18rem;">
-
-            <div class="card-body">
-                <p class="question card-text">{{ card.answer }}</p>
-            </div>
-
-
-
-
-            <div class="card-footer">
-                <div>
-                {% for tag in tags %}
-                {{ tag.name }}
-                {% endfor %}
+            <div class="row justify-content-around relative-bottom" >
+                <div class="col-md-5 text-center m-2">
+                    <div class="card">
+                        <div class="card-header bg-alert text-light
+                        bg-secondary text-uppercase">Tags</div>
+                            <ol class="list-group list-group-flush">
+                                {% for tag in tags %}
+                                    <li class="list-group-item">{{ tag.name }}</li>
+                                {% endfor %}
+                            </ol>
+                        </div>
                 </div>
-        <div>
-            {% for c in category %}
-            {{ c.name }}
-            {% endfor %}
-        </div>
+                <div class="col-md-5 text-center m-2">
+                    <div class="card">
+                        <div class="card-header bg-alert text-light
+                        bg-secondary text-uppercase">Categories</div>
+                            <ol class="list-group list-group-flush">
+                                {% for c in category %}
+                                    <li class="list-group-item">{{ c.name }}</li>
+                                {% endfor %}
+                            </ol>
+                        </div>
+                </div>
             </div>
-
-
         </div>
-
-        <div>
-
     </div>
-
-        </div>
-
-
 </section>
 {% endblock %}

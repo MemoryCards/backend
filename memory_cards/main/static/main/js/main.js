@@ -8,3 +8,16 @@ function show_response (){
 }
 
 btn.addEventListener('click', show_response )
+
+
+
+
+$('.my-carousel').slick({
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+     arrows: true,
+
+});
