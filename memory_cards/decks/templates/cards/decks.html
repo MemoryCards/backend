@@ -7,21 +7,17 @@
 {% block style %}<link href="{% static 'posts/css/style.css' %}" rel="stylesheet" >{% endblock %}
 -->
 <!-- The title of post list   -->
-{% block title %} The Posts {% endblock %}
+{% block title %} The Decks {% endblock %}
 
 {% block content %}
     <section id="decks" class="decks">
-
         <div class="container text-center">
             <h1 class="m-2 p-2">Decks</h1>
-
-
-                <di class="my-carousel">
-                    <div class="card-group">
+                <div class="card-group my-carousel">
                     {% for deck in decks %}
                         <div class="card text-center mx-3">
                             <div class="card-header">
-                            {{ deck.name}}
+                                {{ deck.name}}
                             </div>
                             <div class="card-body">
                                 {{ deck.depiction}}
@@ -35,5 +31,4 @@
             </div>
         </div>
     </section>
-
 {% endblock %}
