@@ -16,7 +16,7 @@ sass style.scss:../css/style.css -w
 body {
   font-family: "IBM Plex Sans", sans-serif;
   position: relative;
-  background-color: rgb(104, 223, 239);
+  background-color: rgb(143, 239, 42);
 }
 
 nav {
