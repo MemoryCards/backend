@@ -62,4 +62,10 @@ header .welcome-text {
   z-index: 5;
 }
 
+@media (min-width: 992px) {
+  .welcome-img {
+    background-image: url("../img/business-card-ge8da23410_1920.png");
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
