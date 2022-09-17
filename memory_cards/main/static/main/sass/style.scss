@@ -2,7 +2,7 @@
 sass style.scss:../css/style.css -w
 */
 @use './colors' as colors ;
-@use './animations' as animations;
+@use './animations';
 @use './reset' as reset ;
 
 
@@ -66,5 +66,49 @@ header {
 @media (min-width: 992px) {
     .welcome-img {
         background-image: url('../img/business-card-ge8da23410_1920.png');
+    }
+}
+
+
+
+.m-card {
+    position: relative;
+    margin: 20px 80px;
+    width: 450px;
+    height: 700px;
+    perspective: 800px;
+    border: solid white;
+    .m-card-q {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+        border-radius: 30px;
+        text-align: center;
+        background-image: linear-gradient(315deg, #74e1c4 0%, #b9e0a0 74% );
+
+        transition: .8s;
+        z-index: 3;
+    }
+
+    .m-card-a {
+        position: absolute;
+
+    }
+}
+
+.m-card:hover{
+    animation: up;
+    z-index: -1;
+    .m-card-a {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+        border-radius: 30px;
+        text-align: center;
+        background-image: linear-gradient(315deg, #74e1c4 0%, #b9e0a0 74% );
+        transition: .8s;
+        z-index: 0;
     }
 }
