@@ -1,16 +1,9 @@
 @keyframes up {
-    0% {
+    from {
         transform: translateY(0);
         opacity: 1;
     }
-    50% {
-        transform: translateY(35%);
-
-    }
-    80% {
-        opacity: 1;
-    }
-    100% {
+    to {
         opacity: 0;
     }
 }
