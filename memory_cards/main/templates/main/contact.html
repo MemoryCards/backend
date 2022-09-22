@@ -2,17 +2,20 @@
 <!-- The static title of Post  -->
 {% block title %} Contact {% endblock %}
 {% block content %}
-<section class="contact" id="contact">
-    <div class="container">
-        <div class="d-flex justify-content-center align-items-center">
-            <form action="">
-                <fieldset>
-                  <div class="mb-3">
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center">
+                <form action="">
+                    <fieldset>
+                        <input class="form-control" type="text" placeholder="name">
+                        <input class="form-control" type="text" placeholder="email">
+                        <input class="form-control" type="text" placeholder="Default input">
+                      <div class="mb-3">
 
-                  </div>
-                </fieldset>
-            </form>
+                      </div>
+                    </fieldset>
+                </form>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 {% endblock %}
