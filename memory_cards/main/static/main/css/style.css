@@ -1,15 +1,9 @@
 @keyframes up {
-  0% {
+  from {
     transform: translateY(0);
     opacity: 1;
   }
-  50% {
-    transform: translateY(35%);
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
+  to {
     opacity: 0;
   }
 }
@@ -82,44 +76,20 @@ header .welcome-text {
     background-image: url("../img/business-card-ge8da23410_1920.png");
   }
 }
-.m-card {
-  position: relative;
-  margin: 20px 80px;
-  width: 450px;
-  height: 700px;
-  perspective: 800px;
-  border: solid white;
+/* card */
+.memo-card {
+  margin-top: 150px;
+  padding: 20px;
 }
-.m-card .m-card-q {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  padding: 30px;
-  border-radius: 30px;
-  text-align: center;
-  background-image: linear-gradient(315deg, #74e1c4 0%, #b9e0a0 74%);
-  transition: 0.8s;
-  z-index: 3;
+.memo-card__btns {
+  display: flex;
+  justify-content: space-around;
 }
-.m-card .m-card-a {
-  position: absolute;
-}
-
-.m-card:hover {
-  animation: up;
-  z-index: -1;
-}
-.m-card:hover .m-card-a {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  padding: 30px;
-  border-radius: 30px;
-  text-align: center;
-  background-image: linear-gradient(315deg, #74e1c4 0%, #b9e0a0 74%);
-  transition: 0.8s;
-  z-index: 0;
-  animation: up;
+.memo-card__btn {
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 9px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

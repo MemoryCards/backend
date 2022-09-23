@@ -5,48 +5,16 @@
 {% endblock %}
 {% block content %}
 <section class="vh-100">
-    <div id="albert" class="container text-center vw-100">
-        <div class="justify-content-center align-item-center">
-        <div class="card top-1 mt-2 vh-75">
-            <div class="card-header">
-                <p class="question card-text justify-content-center">{{ card.question }}</p>
-            </div>
-            <div class="card-body">
-                <p class="question card-text response">{{ card.answer }}</p>
-                <button type="button" class="check btn btn-warning"> Check </button>
-            </div>
-
-        </div>
-            <div class="row justify-content-around relative-bottom" >
-                <div class="col-md-5 text-center m-2">
-                    <div class="card">
-                        <div class="card-header bg-alert text-light
-                        bg-secondary text-uppercase">Tags</div>
-                            <ol class="list-group list-group-flush">
-                                {% for tag in tags %}
-                                    <li class="list-group-item">{{ tag.name }}</li>
-                                {% endfor %}
-                            </ol>
-                        </div>
-                </div>
-                <div class="col-md-5 text-center m-2">
-                    <div class="card">
-                        <div class="card-header bg-alert text-light
-                        bg-secondary text-uppercase">Categories</div>
-                            <ol class="list-group list-group-flush">
-                                {% for c in category %}
-                                    <li class="list-group-item">{{ c.name }}</li>
-                                {% endfor %}
-                            </ol>
-                        </div>
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="memo-card">
+            <div class="memo-card__body">
+                <div class="memo-card__question">{{ card.question }}</div>
+                <div class="memo-card__answer">{{ card.answer }}</div>
+                <div class="memo-card__btns">
+                    <div class="memo-card__btn">Check</div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    <div class="m-card">
-        <div class="m-card-q">{{ card.question }}</div>
-        <div class="m-card-a">{{ card.answer }}</div>
     </div>
 </section>
 {% endblock %}

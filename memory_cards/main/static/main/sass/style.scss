@@ -7,106 +7,87 @@ sass style.scss:../css/style.css -w
 
 
 .response {
-    display: none;
+  display: none;
 }
 
 body {
-    font-family: 'IBM Plex Sans', sans-serif;
-    position: relative;
-    background-color: colors.$background-them;
+  font-family: 'IBM Plex Sans', sans-serif;
+  position: relative;
+  background-color: colors.$background-them;
 }
 
 nav {
-    text-transform: uppercase;
-    z-index: 1;
+  text-transform: uppercase;
+  z-index: 1;
 }
 
 header {
-    color: colors.$grey;
-    text-shadow: 2px 1px colors.$white;
-    h1 {
-        font-size: 30px;
-        text-transform: uppercase;
-    }
+  color: colors.$grey;
+  text-shadow: 2px 1px colors.$white;
 
-    p {
-        font-size: 14px;
-    }
+  h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+  }
 
-    .welcome-img {
-        position: relative;
-        height: 100vh;
-        background-image: url('../img/business-card-g3dca71946_640.png');
-        background-position: center;
-        background-size: cover;
-        background-attachment: fixed;
-        z-index: 0;
-    }
+  p {
+    font-size: 14px;
+  }
 
-    .welcome-shadow {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: rgb(255, 255, 255, .5 );
-        z-index: -10;
-    }
+  .welcome-img {
+    position: relative;
+    height: 100vh;
+    background-image: url('../img/business-card-g3dca71946_640.png');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 0;
+  }
 
-    .welcome-text {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        height: 100%;
-        padding: 10px;
-        text-align: center;
-        z-index: 5;
-    }
+  .welcome-shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255, .5);
+    z-index: -10;
+  }
+
+  .welcome-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+    z-index: 5;
+  }
 }
 
 @media (min-width: 992px) {
-    .welcome-img {
-        background-image: url('../img/business-card-ge8da23410_1920.png');
-    }
+  .welcome-img {
+    background-image: url('../img/business-card-ge8da23410_1920.png');
+  }
 }
 
-.m-card {
-    position: relative;
-    margin: 20px 80px;
-    width: 450px;
-    height: 700px;
-    perspective: 800px;
-    border: solid white;
-    .m-card-q {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        padding: 30px;
-        border-radius: 30px;
-        text-align: center;
-        background-image: linear-gradient(315deg, #74e1c4 0%, #b9e0a0 74% );
-        transition: .8s;
-        z-index: 3;
-    }
+/* card */
 
-    .m-card-a {
-        position: absolute;
+.memo-card {
+  margin-top: 150px;
+  padding: 20px;
 
-    }
-}
+  &__body {
+  }
 
-.m-card:hover{
-    animation: up;
-    z-index: -1;
-    .m-card-a {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        padding: 30px;
-        border-radius: 30px;
-        text-align: center;
-        background-image: linear-gradient(315deg, #74e1c4 0%, #b9e0a0 74% );
-        transition: .8s;
-        z-index: 0;
-        animation: up;
-    }
+  &__btns {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__btn {
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 9px;
+    cursor: pointer;
+  }
 }
