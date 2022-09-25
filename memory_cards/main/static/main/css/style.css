@@ -26,6 +26,7 @@ body {
   font-family: "IBM Plex Sans", sans-serif;
   position: relative;
   background-color: #ACDCEE;
+  color: #475053;
 }
 
 nav {
@@ -79,6 +80,7 @@ header .welcome-text {
 /* card */
 .memo-card {
   margin-top: 150px;
+  color: #475053;
 }
 .memo-card__body {
   position: relative;
@@ -86,8 +88,8 @@ header .welcome-text {
   width: 400px;
   height: 400px;
   border-radius: 18px;
-  border: 2px grey solid;
-  background: linear-gradient(90deg, #b8e18e, #f8f8f8);
+  border: 2px #475053 solid;
+  background: #F0FBFF;
 }
 .memo-card__question {
   padding: 10px;
@@ -102,8 +104,8 @@ header .welcome-text {
   padding: 15px 0px;
 }
 .memo-card__btn {
-  padding: 10px 20px;
-  border: 1px solid black;
+  padding: 11px 22px;
+  border: 2px #475053 solid;
   border-radius: 9px;
   cursor: pointer;
 }
