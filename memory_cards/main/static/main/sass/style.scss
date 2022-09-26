@@ -3,7 +3,7 @@ sass style.scss:../css/style.css -w
 */
 @use './colors' as colors ;
 @use './animations';
-@use './reset' as reset ;
+@use './reset' as * ;
 
 
 .response {
@@ -108,5 +108,14 @@ header {
     border-radius: 9px;
     cursor: pointer;
   }
+
+}
+
+/* about */
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
