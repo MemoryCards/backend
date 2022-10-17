@@ -1,0 +1,20 @@
+@use '../abstracts/colors' as colors;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background-color: colors.$light-blue;
+
+  color: colors.$grey;
+}

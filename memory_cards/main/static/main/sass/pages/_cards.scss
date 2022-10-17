@@ -1,0 +1,41 @@
+@use '../abstracts/colors' as c;
+
+// cards
+
+// single card styles
+
+.memo-card {
+  margin-top: 150px;
+  color: c.$grey;
+  &__body {
+    position: relative;
+    padding: 10px 20px;
+    width: 400px;
+    height: 400px;
+    border-radius: 18px;
+    border: 2px c.$grey solid;
+    background: c.$white;
+  }
+
+  &__question{
+    padding: 10px;
+  }
+
+  &__answer{
+    padding: 10px;
+  }
+
+  &__btns {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 0px;
+  }
+
+  &__btn {
+    padding: 11px 22px;
+    border: 2px c.$grey solid;
+    border-radius: 9px;
+    cursor: pointer;
+  }
+}
