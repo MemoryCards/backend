@@ -19,13 +19,18 @@ body {
   color: #475053;
 }
 
-.response {
+.nav-mobile {
   display: none;
 }
-
-nav {
+.nav__link {
   text-transform: uppercase;
-  z-index: 1;
+  text-decoration: none;
+  padding: 1.4rem;
+  font-size: 1.6rem;
+  color: red;
+}
+.nav__link:hover {
+  color: #2E94B9;
 }
 
 header {

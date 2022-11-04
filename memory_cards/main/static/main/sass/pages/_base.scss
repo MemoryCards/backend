@@ -1,14 +1,22 @@
 @use '../abstracts/colors' as colors;
 
-.response {
-  display: none;
-}
 
 
-
-nav {
-  text-transform: uppercase;
-  z-index: 1;
+.nav {
+  &-desktop {}
+  &-mobile {
+    display: none;
+  }
+  &__link {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.4rem;
+    font-size: 1.6rem;
+    color: red;
+    &:hover{
+      color: #2E94B9;
+    }
+  }
 }
 
 header {
