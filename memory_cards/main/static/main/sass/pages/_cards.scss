@@ -26,10 +26,12 @@
   }
 
   &__btns {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 15px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: violet;
+
+
   }
 
   &__btn {
@@ -37,5 +39,15 @@
     border: 2px c.$grey solid;
     border-radius: 9px;
     cursor: pointer;
+    width: 30%;
+    font-size: 1rem;
+    text-transform: uppercase;
+    &-no {
+      background-color: red;
+    }
+
+    &-ok{
+      background-color: #39b439;
+    }
   }
 }

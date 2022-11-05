@@ -4,14 +4,16 @@
 {{ card.id }}
 {% endblock %}
 {% block content %}
-<section class="vh-100">
-    <div class="d-flex justify-content-center align-items-center">
+<section class="">
+    <div class="">
         <div class="memo-card">
             <div class="memo-card__body">
                 <div class="memo-card__question">{{ card.question }}</div>
                 <div class="memo-card__answer">{{ card.answer }}</div>
                 <div class="memo-card__btns">
-                    <div class="memo-card__btn">Check</div>
+                    <button class="memo-card__btn memo-card__btn-no">no</button>
+                    <button class="memo-card__btn memo-card__btn-check">Check</button>
+                    <button class="memo-card__btn memo-card__btn-ok">ok</button>
                 </div>
             </div>
         </div>
