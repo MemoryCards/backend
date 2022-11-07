@@ -33,15 +33,10 @@
             <a class="nav__link" href="{% url 'decks:all' %}">Decks</a>
         </nav>
     </header>
-{% block content %}
-{% endblock %}
-<!--    <section>-->
-<!--        <ul class="nav justify-content-around border-bottom pb-3 mb-3">-->
-<!--          <li class="nav-item"><a href="{% url 'main:home' %}" class="nav-link px-2 ">Home</a></li>-->
-<!--          <li class="nav-item"><a href="{% url 'main:contact' %}" class="nav-link px-2 text-muted">Contact</a></li>-->
-<!--          <li class="nav-item"><a href="{% url 'main:about' %}" class="nav-link px-2 text-muted">About</a></li>-->
-<!--        </ul>-->
-<!--    </section>-->
+
+    {% block content %}
+    {% endblock %}
+
     <footer class="footer">
         <p class=" ">©Uncle Moris | <span class="y"></span></p>
     </footer>
