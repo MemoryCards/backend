@@ -19,6 +19,27 @@ body {
   color: #475053;
 }
 
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.section-heading {
+  position: relative;
+  margin-bottom: 2em;
+  font-size: 3rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+  color: #2E94B9;
+  letter-spacing: 2px;
+}
+
+.section-padding {
+  padding: 6em 2em;
+}
+
 .nav-mobile {
   display: none;
 }

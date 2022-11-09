@@ -2,7 +2,7 @@
 sass style.scss:../css/style.css -w
 */
 @import 'base/reset';
-
+@import 'base/components';
 //pages
 @import "pages/base";
 @import "pages/cards";
