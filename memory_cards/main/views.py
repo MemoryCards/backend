@@ -9,3 +9,6 @@ def contact(request):
 
 def about (request): 
     return render(request, 'main/about.html')
+
+def client_panel (request):
+    return render(request, 'main/client_panel.html')
