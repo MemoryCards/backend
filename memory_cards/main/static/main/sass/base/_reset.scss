@@ -9,11 +9,14 @@
 }
 
 html{
-    scroll-behavior: smooth;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'IBM Plex Sans', sans-serif;
   background-color: colors.$light-blue;
+  font-family: 'IBM Plex Sans', sans-serif;
+
+  font-size: 1.6rem;
   color: colors.$grey;
 }

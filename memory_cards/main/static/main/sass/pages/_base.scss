@@ -3,7 +3,30 @@
 
 
 .nav {
-  &-desktop {}
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  height: 100px;
+  /*
+  background-image: url();
+  transform: translateX(100%);
+  transition: .5s cubic-bezier(0.65, 0.05, 0.36, 1);
+  */
+  z-index: 1;
+
+  /*
+  &--active {
+    transform: translateX(0);
+  }
+  */
+
+  &-desktop {
+    display: block;
+  }
+
   &-mobile {
     display: none;
   }
@@ -12,7 +35,7 @@
     text-decoration: none;
     padding: 1.4rem;
     font-size: 1.6rem;
-    color: red;
+    color: colors.$dark-blue;
     &:hover{
       color: #2E94B9;
     }
@@ -20,9 +43,44 @@
 }
 
 .footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  color: white;
+  background-color: gray;
+
+  .wrapper {
+    padding: 6em 2em 2em;
+  }
+
+  &__box {
+    font-size: 1.4rem;
+  }
+
+  &__box-title {
+    margin-bottom: 1em;
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+
+  &__box {
+    margin: 2em 0 1em;
+  }
+
+  &__box-link {
+    padding: 0 .3em;
+    font-size: 3.6rem;
+    color: white;
+    text-decoration: none;
+    transition: color .3s;
+
+
+    &:hover {
+      color: white;
+    }
+
+  }
+  &__bottom-text {
+    padding: 2em;
+    text-align: center;
+  }
 }
 
 

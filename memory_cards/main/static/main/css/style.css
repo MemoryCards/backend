@@ -10,12 +10,14 @@ sass style.scss:../css/style.css -w
 }
 
 html {
+  font-size: 62.5%;
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "IBM Plex Sans", sans-serif;
   background-color: #ACDCEE;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1.6rem;
   color: #475053;
 }
 
@@ -40,6 +42,29 @@ body {
   padding: 6em 2em;
 }
 
+.nav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  height: 100px;
+  /*
+  background-image: url();
+  transform: translateX(100%);
+  transition: .5s cubic-bezier(0.65, 0.05, 0.36, 1);
+  */
+  z-index: 1;
+  /*
+  &--active {
+    transform: translateX(0);
+  }
+  */
+}
+.nav-desktop {
+  display: block;
+}
 .nav-mobile {
   display: none;
 }
@@ -48,16 +73,43 @@ body {
   text-decoration: none;
   padding: 1.4rem;
   font-size: 1.6rem;
-  color: red;
+  color: #2E94B9;
 }
 .nav__link:hover {
   color: #2E94B9;
 }
 
 .footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  color: white;
+  background-color: gray;
+}
+.footer .wrapper {
+  padding: 6em 2em 2em;
+}
+.footer__box {
+  font-size: 1.4rem;
+}
+.footer__box-title {
+  margin-bottom: 1em;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+.footer__box {
+  margin: 2em 0 1em;
+}
+.footer__box-link {
+  padding: 0 0.3em;
+  font-size: 3.6rem;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer__box-link:hover {
+  color: white;
+}
+.footer__bottom-text {
+  padding: 2em;
+  text-align: center;
 }
 
 @media (min-width: 992px) {
