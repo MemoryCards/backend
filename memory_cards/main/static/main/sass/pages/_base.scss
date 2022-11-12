@@ -1,6 +1,54 @@
 @use '../abstracts/colors' as colors;
+@use "../abstracts/mixins" as *;
 
+.burger-btn {
+  position: fixed;
 
+  display: none;
+
+  top: 20px;
+  right: 20px;
+  padding: 1em;
+  background: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  z-index: 5;
+
+  &:focus {
+    outline: none;
+    border-radius: 8px;
+  }
+
+  &:hover {
+    .burger-btn__bars, .burger-btn__bars::after, .burger-btn__bars::before {
+      width: 100%;
+    }
+  }
+
+  &__bars, &__bars::after, &__bars::before {
+    @include burgerBtn
+  }
+
+  &__box {
+    position: relative;
+    width: 40px;
+    height: 30px;
+  }
+
+  &__bars {
+    width: 100%;
+
+    &::after {
+      top: 13px;
+      width: 60%;
+    }
+
+    &::before {
+      top: 27px;
+      width: 30%;
+    }
+  }
+}
 
 .nav {
   position: fixed;
@@ -87,5 +135,14 @@
 @media (min-width: 992px) {
   .welcome-img {
     background-image: url('../img/business-card-ge8da23410_1920.png');
+  }
+}
+
+@media (max-width: 576px) {
+  .burger-btn {
+    display: block;
+  }
+  .nav-desktop {
+    display: none;
   }
 }

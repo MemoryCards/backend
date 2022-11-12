@@ -42,6 +42,49 @@ body {
   padding: 6em 2em;
 }
 
+.burger-btn {
+  position: fixed;
+  display: none;
+  top: 20px;
+  right: 20px;
+  padding: 1em;
+  background: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  z-index: 5;
+}
+.burger-btn:focus {
+  outline: none;
+  border-radius: 8px;
+}
+.burger-btn:hover .burger-btn__bars, .burger-btn:hover .burger-btn__bars::after, .burger-btn:hover .burger-btn__bars::before {
+  width: 100%;
+}
+.burger-btn__bars, .burger-btn__bars::after, .burger-btn__bars::before {
+  position: absolute;
+  right: 0;
+  height: 3px;
+  content: "";
+  background-color: white;
+  transition: width 0.3s;
+}
+.burger-btn__box {
+  position: relative;
+  width: 40px;
+  height: 30px;
+}
+.burger-btn__bars {
+  width: 100%;
+}
+.burger-btn__bars::after {
+  top: 13px;
+  width: 60%;
+}
+.burger-btn__bars::before {
+  top: 27px;
+  width: 30%;
+}
+
 .nav {
   position: fixed;
   top: 0;
@@ -115,6 +158,14 @@ body {
 @media (min-width: 992px) {
   .welcome-img {
     background-image: url("../img/business-card-ge8da23410_1920.png");
+  }
+}
+@media (max-width: 576px) {
+  .burger-btn {
+    display: block;
+  }
+  .nav-desktop {
+    display: none;
   }
 }
 .memo-card {
