@@ -14,9 +14,10 @@
         <div class="wrapper">
             <h1>The Cards</h1>
                 <ul class="list-group">
+                    <input type="text" class="search-cards" placeholder="">
                     {% for card in cards %}
-                    <li class="list-group-item list-group-item-light">
-                        <a class="link-secondary" href="{% url 'cards:card' card.id %}"> {{ card.question }}</a>
+                    <li class="card-item">
+                        <a class="" href="{% url 'cards:card' card.id %}"> {{ card.question }}</a>
                     </li>
                     {% endfor %}
                 </ul>
