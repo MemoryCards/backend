@@ -1,2 +1,10 @@
-./data/
+# backend
+/backend/backend-env/
+
+
+/backend/data/
+
+# frontend
+/frontend/memory-cards/node_modules
+
 

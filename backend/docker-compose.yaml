@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - "5000:5432"
+    environment:
+      - POSTGRES_DB=memory_cards
+      - POSTGRES_USER=memory_cards
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
