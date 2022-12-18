@@ -1,5 +1,5 @@
 from django.db import models
-from ..decks.models import Deck
+from decks.models import Deck
 
 
 class Card(models.Model):
