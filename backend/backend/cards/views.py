@@ -3,6 +3,7 @@ from rest_framework import viewsets, permissions
 from .serializers import CardSerializer
 from rest_framework.response import Response
 
+
 class CardViewSet(viewsets.ModelViewSet):
     queryset = Card.objects.all()
     serializer_class = CardSerializer

@@ -10,7 +10,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class DeckSerializer(serializers.ModelSerializer):
-    category = CategorySerializer(many=False)
+    category = CategorySerializer(many=True)
 
     class Meta:
         model = Deck
