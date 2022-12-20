@@ -1,7 +1,17 @@
-from .models import Card
-from rest_framework import viewsets, permissions
-from .serializers import CardSerializer
+from .models import Card, Deck, Category
+from rest_framework import viewsets
+from .serializers import CardSerializer, DeckSerializer, CategorySerializer
 from rest_framework.response import Response
+
+
+class DeckViewSet(viewsets.ModelViewSet):
+    queryset = Deck.objects.all()
+    serializer_class = DeckSerializer
+
+
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
 
 
 class CardViewSet(viewsets.ModelViewSet):

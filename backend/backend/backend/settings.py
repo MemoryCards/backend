@@ -40,9 +40,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
 
-    'cards',
-    'decks',
-    'users',
+    'api',
 
 ]
 
