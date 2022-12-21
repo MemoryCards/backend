@@ -8,17 +8,15 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = ('name', 'description')
 
 
-class DeckSerializer(serializers.ModelSerializer):
-    category = CategorySerializer(many=True)
-
-    class Meta:
-        model = Deck
-        fields = ('name', 'description', 'category')
-
-
 class CardsSerializer(serializers.ModelSerializer):
-    deck = DeckSerializer(many=False)
-
     class Meta:
         model = Card
-        fields = ('title', 'question', 'answer', 'deck')
+        fields = ('title', 'question', 'answer')
+
+
+class DeckSerializer(serializers.ModelSerializer):
+    category = CategorySerializer(many=True)
+    cards = CardsSerializer(many=True)
+    class Meta:
+        model = Deck
+        fields = ('name', 'description', 'category', 'cards')
