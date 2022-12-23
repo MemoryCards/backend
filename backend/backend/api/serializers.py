@@ -3,11 +3,14 @@ from .models import Deck, Category, Card
 
 
 class CategorySerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Category
         fields = ('name', 'description')
 
+
 class CategoryMiniSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Category
         fields = ('name', )
@@ -21,9 +24,12 @@ class DeckMiniSerializer(serializers.ModelSerializer):
 
 class CardsSerializer(serializers.ModelSerializer):
     deck = DeckMiniSerializer(many=False)
+
     class Meta:
         model = Card
-        fields = ('deck','title', 'question', 'answer')
+        fields = ('deck', 'title', 'question', 'answer')
+        read_only_fields = ('deck', )
+        depth = 1
 
 
 class CardsMiniSerializer(serializers.ModelSerializer):
