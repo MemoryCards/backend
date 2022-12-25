@@ -23,6 +23,20 @@ class CardViewSet(viewsets.ModelViewSet):
     #     serializer = CardsSerializer(queryset, many=False)
     #     return Response(serializer.data)
     #
+
+    def update(self, request, *args, **kwargs):
+        card = self.get_object()
+        card.title = request.data['title']
+        card.question = request.data['question']
+        card.answer = request.data['answer']
+        card.deck = request.data['deck']
+        card.save()
+
+        serializer = CardsSerializer(card, many=False)
+        return Response(serializer.data)
+
+
+
     def destroy(self, request, *args, **kwargs):
         card = self.get_object()
         card.delete()
