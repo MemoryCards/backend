@@ -1,5 +1,5 @@
 from .models import Card, Deck, Category
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 from .serializers import CardsSerializer, DeckSerializer, CategorySerializer
 from rest_framework.response import Response
 
@@ -17,12 +17,20 @@ class CategoryViewSet(viewsets.ModelViewSet):
 class CardViewSet(viewsets.ModelViewSet):
     queryset = Card.objects.all()
     serializer_class = CardsSerializer
+    filter_backends = [filters.SearchFilter]
+    filterset_fields = ['title']
 
     # def list(self, request, *args, **kwargs):
     #     queryset = self.get_queryset()
     #     serializer = CardsSerializer(queryset, many=False)
     #     return Response(serializer.data)
     #
+
+    #TO DO: create custom metchod for lists cards by deck
+    """
+    """
+    def list_by_deck(self, request, *args, **kwargs):
+        pass
 
     def update(self, request, *args, **kwargs):
         card = self.get_object()
