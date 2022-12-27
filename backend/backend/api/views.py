@@ -2,17 +2,25 @@ from .models import Card, Deck, Category
 from rest_framework import viewsets, filters
 from .serializers import CardsSerializer, DeckSerializer, CategorySerializer
 from rest_framework.response import Response
-
+from rest_framework.decorators import action
 
 class DeckViewSet(viewsets.ModelViewSet):
     queryset = Deck.objects.all()
     serializer_class = DeckSerializer
 
+    def destroy(self, request, *args, **kwargs):
+        deck = self.get_object()
+        deck.delete()
+        return Response('Deck has been removed')
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
+    def destroy(self, request, *args, **kwargs):
+        category = self.get_object()
+        category.delete()
+        return Response('Category has been removed')
 
 class CardViewSet(viewsets.ModelViewSet):
     queryset = Card.objects.all()
@@ -20,17 +28,11 @@ class CardViewSet(viewsets.ModelViewSet):
     filter_backends = [filters.SearchFilter]
     filterset_fields = ['title']
 
-    # def list(self, request, *args, **kwargs):
-    #     queryset = self.get_queryset()
-    #     serializer = CardsSerializer(queryset, many=False)
-    #     return Response(serializer.data)
-    #
 
-    #TO DO: create custom metchod for lists cards by deck
-    """
-    """
+    @action(detail=False)
     def list_by_deck(self, request, *args, **kwargs):
         pass
+
 
     def update(self, request, *args, **kwargs):
         card = self.get_object()
