@@ -2,7 +2,15 @@ from .models import Card, Deck, Category
 from rest_framework import viewsets, filters
 from .serializers import CardsSerializer, DeckSerializer, CategorySerializer
 from rest_framework.response import Response
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import (
+    IsAuthenticated,
+    IsAuthenticatedOrReadOnly,
+    DjangoModelPermissions,
+DjangoObjectPermissions
+)
 from rest_framework.decorators import action
+
 
 class DeckViewSet(viewsets.ModelViewSet):
     queryset = Deck.objects.all()
