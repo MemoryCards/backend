@@ -24,7 +24,7 @@ class DeckViewSet(viewsets.ModelViewSet):
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
-
+   # permission_classes =
     def destroy(self, request, *args, **kwargs):
         category = self.get_object()
         category.delete()
