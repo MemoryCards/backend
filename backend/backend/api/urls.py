@@ -9,8 +9,6 @@ router.register(r'categories', CategoryViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
-
-]
-urlpatterns += [
     path('api-token-auth/', views.obtain_auth_token)
+
 ]
