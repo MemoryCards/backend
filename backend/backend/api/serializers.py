@@ -37,6 +37,7 @@ class CardsMiniSerializer(serializers.ModelSerializer):
         model = Card
         fields = ('title',)
 
+
 class DeckSerializer(serializers.ModelSerializer):
     category = CategoryMiniSerializer(many=True)
     cards = CardsMiniSerializer(many=True)

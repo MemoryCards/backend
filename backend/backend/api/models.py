@@ -11,7 +11,7 @@ class Category(models.Model):
 
 class Deck(models.Model):
     name = models.CharField(max_length=55, unique=True)
-    description = models.TextField(max_length=250)
+    description = models.TextField(max_length=250, default="")
     category = models.ManyToManyField(Category, related_name='category')
 
     def __str__(self):
@@ -20,8 +20,8 @@ class Deck(models.Model):
 
 class Card(models.Model):
     title = models.CharField(max_length=50)
-    question = models.TextField()
-    answer = models.TextField()
+    question = models.TextField(default='')
+    answer = models.TextField(default='')
     deck = models.ForeignKey(Deck, on_delete=models.CASCADE, related_name='cards')
 
     def __str__(self):
