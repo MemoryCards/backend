@@ -16,6 +16,7 @@ from rest_framework.decorators import action
 class DeckViewSet(viewsets.ModelViewSet):
     queryset = Deck.objects.all()
     serializer_class = DeckSerializer
+    authentication_classes = (TokenAuthentication,)
     permission_classes = [IsAuthenticated]
 
     def destroy(self, request, *args, **kwargs):
@@ -27,7 +28,8 @@ class DeckViewSet(viewsets.ModelViewSet):
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
-    permission_classes = [IsAuthenticated]
+    authentication_classes = (TokenAuthentication, )
+    permission_classes = [IsAuthenticatedOrReadOnly]
 
     def destroy(self, request, *args, **kwargs):
         category = self.get_object()
@@ -40,6 +42,7 @@ class CardViewSet(viewsets.ModelViewSet):
     serializer_class = CardsSerializer
     filter_backends = [filters.SearchFilter]
     filterset_fields = ['title']
+    authentication_classes = (TokenAuthentication, )
     permission_classes = [IsAuthenticatedOrReadOnly]
 
     @action(detail=False)
