@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Deck, Category, Card
+from .models.models import Deck, Category, Card
 
 
 class CategorySerializer(serializers.ModelSerializer):

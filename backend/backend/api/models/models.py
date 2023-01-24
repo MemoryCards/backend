@@ -1,16 +1,15 @@
 from django.db import models
+from .abstract_models import BaseCardModel, TimestampModel, NameSlugModel
 
 
-class Category(models.Model):
-    name = models.CharField(max_length=55, unique=True)
+class Category(NameSlugModel, TimestampModel):
     description = models.CharField(max_length=256)
 
     def __str__(self):
         return str(self.name)
 
 
-class Deck(models.Model):
-    name = models.CharField(max_length=55, unique=True)
+class Deck(NameSlugModel):
     description = models.TextField(max_length=250, default="")
     category = models.ManyToManyField(Category, related_name='category')
 
@@ -18,10 +17,7 @@ class Deck(models.Model):
         return str(self.name)
 
 
-class Card(models.Model):
-    title = models.CharField(max_length=50)
-    question = models.TextField(default='')
-    answer = models.TextField(default='')
+class Card(NameSlugModel, BaseCardModel):
     deck = models.ForeignKey(Deck, on_delete=models.CASCADE, related_name='cards')
 
     def __str__(self):

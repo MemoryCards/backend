@@ -1,6 +1,6 @@
 from django.urls import include, path
 from rest_framework import routers
-from .views import CardViewSet,DeckViewSet, CategoryViewSet
+from .views import CardViewSet, DeckViewSet, CategoryViewSet
 from rest_framework.authtoken import views
 router = routers.DefaultRouter()
 router.register(r'cards', CardViewSet)

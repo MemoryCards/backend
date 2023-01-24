@@ -1,4 +1,4 @@
-from .models import Card, Deck, Category
+from .models.models import Card, Deck, Category
 from rest_framework import viewsets, filters
 from .serializers import CardsSerializer, DeckSerializer, CategorySerializer
 from rest_framework.response import Response
