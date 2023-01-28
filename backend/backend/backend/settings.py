@@ -82,11 +82,15 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'memory_cards',
-        'USER': 'memory_cards',
-        'PASSWORD': 'password',
+
+        'NAME': str(os.getenv('POSTGRES_DB')),
+        'USER': str(os.getenv('POSTGRES_USER')),
+        'PASSWORD': str(os.getenv('POSTGRES_PASSWORD')),
+
         'HOST': 'localhost',
         'PORT': '5000',
+
+
     }
 }
 
