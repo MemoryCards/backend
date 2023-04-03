@@ -1,6 +1,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 
+
 class TimestampModel(models.Model):
     """Abstract base class for models with created_at and updated_at fields."""
     created_at = models.DateTimeField(auto_now_add=True, null=True)
@@ -12,13 +13,11 @@ class TimestampModel(models.Model):
 
 class BaseCardModel(models.Model):
     """Abstract base class for cards models, with title, question and answer"""
-
     question = models.TextField(default='')
     answer = models.TextField(default='')
 
     class Meta:
         abstract = True
-
 
 
 class NameSlugModel(models.Model):
@@ -34,6 +33,7 @@ class NameSlugModel(models.Model):
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
+
 class Card(models.Model):
     question = models.TextField()
     answer = models.TextField()
@@ -44,7 +44,8 @@ class Deck(models.Model):
     description = models.TextField()
     cards = models.ForeignKey(Card, on_delete=models.CASCADE)
 
-class Tag(models.Model):
+
+class Tag(NameSlugModel):
     pass
 
 
