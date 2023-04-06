@@ -13,7 +13,6 @@ class TimestampModel(models.Model):
 
 class BaseCardModel(models.Model):
     """Abstract base class for cards models, with title, question and answer"""
-
     question = models.TextField(default='')
     answer = models.TextField(default='')
 
@@ -23,7 +22,7 @@ class BaseCardModel(models.Model):
 
 class NameSlugModel(models.Model):
     """Abstract base class for models with name and slug fields."""
-    name = models.CharField(max_length=255, default='')
+    name = models.CharField(max_length=255, unique=True, default='')
     slug = models.SlugField(max_length=255, unique=True, blank=True)
 
     class Meta:
