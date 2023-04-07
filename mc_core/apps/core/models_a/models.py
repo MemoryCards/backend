@@ -2,6 +2,8 @@ from django.db import models
 from .abstract_models import BaseCardModel, TimestampModel, NameSlugModel
 
 
+
+
 class Category(NameSlugModel, TimestampModel):
     description = models.CharField(max_length=256)
 

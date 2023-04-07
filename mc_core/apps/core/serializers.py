@@ -6,15 +6,21 @@ from django.contrib.auth.models import User
 class CardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Card
-        fields = ['id', 'question', 'answer', ]
+        fields = ['id', 'question', 'answer', 'deck']
+
+
+class ShortCardSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Card
+        fields = ['question']
 
 
 class DeckSerializer(serializers.ModelSerializer):
-    cards = Card.objects.filter(pk=1)
+    cards = ShortCardSerializer(many=True)
 
     class Meta:
         model = Deck
-        fields = ['id', 'name', 'description', 'cards']
+        fields = ['id', 'name', 'description', 'created_by', 'cards']
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):

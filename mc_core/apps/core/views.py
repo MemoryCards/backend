@@ -6,6 +6,7 @@ from .models import Card, Deck
 from .serializers import UserSerializer
 from django.contrib.auth.models import User
 
+
 class CardViewSet(ModelViewSet):
     queryset = Card.objects.all()
     serializer_class = CardSerializer

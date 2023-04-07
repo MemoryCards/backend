@@ -1,5 +1,5 @@
 from django.db import models
-from django.template.defaultfilters import slugify
+
 
 
 class TimestampModel(models.Model):
@@ -20,15 +20,4 @@ class BaseCardModel(models.Model):
         abstract = True
 
 
-class NameSlugModel(models.Model):
-    """Abstract base class for models with name and slug fields."""
-    name = models.CharField(max_length=255, unique=True, default='')
-    slug = models.SlugField(max_length=255, unique=True, blank=True)
 
-    class Meta:
-        abstract = True
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.name)
-        super().save(*args, **kwargs)
