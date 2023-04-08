@@ -1,6 +1,8 @@
 from rest_framework import serializers
-from .models import Card, Deck
+from .models import Card, Deck, Category, Tag
 from django.contrib.auth.models import User
+from django.utils import timezone
+from django.template.defaultfilters import slugify
 
 
 class CardSerializer(serializers.ModelSerializer):
@@ -9,21 +11,41 @@ class CardSerializer(serializers.ModelSerializer):
         fields = ['id', 'question', 'answer', 'deck']
 
 
-class ShortCardSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Card
-        fields = ['question']
-
-
 class DeckSerializer(serializers.ModelSerializer):
-    cards = ShortCardSerializer(many=True)
+    cards = CardSerializer(many=True)
 
     class Meta:
         model = Deck
         fields = ['id', 'name', 'description', 'created_by', 'cards']
 
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['url', 'username', 'email', 'password']
+
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = ['id', 'name', 'slug', 'created_at', 'updated_at']
+
+    def update(self, instance, validated_data):
+        instance.name = validated_data.get('name', instance.name)
+        instance.slug = slugify(instance.name)
+        instance.updated_at = timezone.now()
+        instance.save()
+        return instance
+
+
+class TagSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tag
+        fields = ['id', 'name', 'slug', 'created_at', 'updated_at']
+
+    def update(self, instance, validated_data):
+        instance.name = validated_data.get('name', instance.name)
+        instance.slug = slugify(instance.name)
+        instance.updated_at = timezone.now()
+        instance.save()
+        return instance

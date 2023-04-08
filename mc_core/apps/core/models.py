@@ -3,7 +3,16 @@ from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
 
 
-class NameSlugModel(models.Model):
+class TimestampAbstractModel(models.Model):
+    """Abstract base class for models with created_at and updated_at fields."""
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True)
+
+    class Meta:
+        abstract = True
+
+
+class NameSlugAbstractModel(models.Model):
     """Abstract base class for models with name and slug fields."""
     name = models.CharField(max_length=255, unique=True, default='')
     slug = models.SlugField(max_length=255, unique=True, blank=True)
@@ -17,7 +26,11 @@ class NameSlugModel(models.Model):
         super().save(*args, **kwargs)
 
 
-class Category(NameSlugModel):
+class Category(NameSlugAbstractModel, TimestampAbstractModel):
+    pass
+
+
+class Tag(NameSlugAbstractModel, TimestampAbstractModel):
     pass
 
 
