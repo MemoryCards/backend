@@ -1,8 +1,14 @@
 from django.shortcuts import render
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated
-from .serializers import CardSerializer, DeckSerializer, CategorySerializer
-from .models import Card, Deck, Category
+from .serializers import (
+    CardSerializer,
+    DeckSerializer,
+    CategorySerializer,
+    TagSerializer
+)
+
+from .models import Card, Deck, Category, Tag
 from .serializers import UserSerializer
 from django.contrib.auth.models import User
 
@@ -10,7 +16,7 @@ from django.contrib.auth.models import User
 class CardViewSet(ModelViewSet):
     queryset = Card.objects.all()
     serializer_class = CardSerializer
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
 
 class DeckViewSet(ModelViewSet):
@@ -29,3 +35,8 @@ class UserViewSet(ModelViewSet):
 class CategoryViewSet(ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+
+
+class TagViewSet(ModelViewSet):
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer

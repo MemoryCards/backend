@@ -1,28 +1,22 @@
 from rest_framework import serializers
-from .models import Card, Deck, Category, Tag
+from .models import Card, Deck, Category, Tag, StudentProfile
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.template.defaultfilters import slugify
 
 
-class CardSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Card
-        fields = ['id', 'question', 'answer', 'deck']
-
-
-class DeckSerializer(serializers.ModelSerializer):
-    cards = CardSerializer(many=True)
+class TagSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Deck
-        fields = ['id', 'name', 'description', 'created_by', 'cards']
+        model = Tag
+        fields = ['id', 'name', 'slug', 'created_at', 'updated_at']
 
-
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ['url', 'username', 'email', 'password']
+    def update(self, instance, validated_data):
+        instance.name = validated_data.get('name', instance.name)
+        instance.slug = slugify(instance.name)
+        instance.updated_at = timezone.now()
+        instance.save()
+        return instance
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -38,14 +32,36 @@ class CategorySerializer(serializers.ModelSerializer):
         return instance
 
 
-class TagSerializer(serializers.ModelSerializer):
+class CardSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Tag
-        fields = ['id', 'name', 'slug', 'created_at', 'updated_at']
+        model = Card
+        fields = [
+            'id',
+                  'question',
+                  'answer',
+                  'deck'
+                  ]
 
-    def update(self, instance, validated_data):
-        instance.name = validated_data.get('name', instance.name)
-        instance.slug = slugify(instance.name)
-        instance.updated_at = timezone.now()
-        instance.save()
-        return instance
+
+class DeckSerializer(serializers.ModelSerializer):
+    cards = CardSerializer(many=True)
+    tags = TagSerializer(many=True)
+    categories = CategorySerializer(many=True)
+
+    class Meta:
+        model = Deck
+        fields = [
+                  'id',
+                  'name',
+                  'description',
+                  'created_by',
+                  'tags',
+                  'categories',
+                  'cards'
+                  ]
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['url', 'username', 'email', 'password']
