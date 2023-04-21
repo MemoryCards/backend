@@ -33,21 +33,27 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class CardSerializer(serializers.ModelSerializer):
+
+    custom_f = serializers.SerializerMethodField('custom_short_question')
     class Meta:
         model = Card
         fields = [
             'id',
                   'question',
                   'answer',
-                  'deck'
+                  'deck',
+                    'custom_f'
                   ]
+
+    def custom_short_question(self, obj):
+        return obj.question[:10]
 
 
 class DeckSerializer(serializers.ModelSerializer):
     cards = CardSerializer(many=True)
     tags = TagSerializer(many=True)
-    categories = CategorySerializer(many=True)
-
+    categories = CategorySerializer(many=True
+    cat = serializers.ModelField(model_field=Category._meta.get_field('name'))
     class Meta:
         model = Deck
         fields = [
